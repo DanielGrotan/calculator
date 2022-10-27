@@ -16,7 +16,7 @@ export default function ClearEntryButton({
 
     for (let i = expression.length - 1; i >= 0; i--) {
       const char = expression[i];
-      if (char === "/" || char === "x" || char === "-" || char === "+") {
+      if (char === "/" || char === "*" || char === "-" || char === "+") {
         setExpression(expression.slice(0, i));
         return;
       }

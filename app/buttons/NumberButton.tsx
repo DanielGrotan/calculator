@@ -30,9 +30,9 @@ export default function NumberButton({
     let char = expression.slice(-1)[0];
     const newExpression = expression.slice();
 
-    console.log(char);
-
-    if (char === "/" || char === "x" || char === "-" || char === "+") {
+    if (char === "0") {
+      newExpression[newExpression.length - 1] = value;
+    } else if (char === "/" || char === "*" || char === "-" || char === "+") {
       newExpression.push(value);
     } else {
       char += value;

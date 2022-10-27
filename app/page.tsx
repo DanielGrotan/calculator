@@ -15,7 +15,7 @@ type Props = {};
 
 export default function Home({}: Props) {
   const [expression, setExpression] = useState<string[]>([]);
-  const [currentNumber, setCurrentNumber] = useState("90");
+  const [currentNumber, setCurrentNumber] = useState("0");
 
   return (
     <div className="h-screen flex flex-col justify-center mx-auto max-w-screen-lg gap-4 p-8">
@@ -31,6 +31,8 @@ export default function Home({}: Props) {
           setCurrentNumber={setCurrentNumber}
         />
         <BackspaceButton
+          expression={expression}
+          setExpression={setExpression}
           currentNumber={currentNumber}
           setCurrentNumber={setCurrentNumber}
         />
@@ -62,7 +64,7 @@ export default function Home({}: Props) {
           setCurrentNumber={setCurrentNumber}
         />
         <OperatorButton
-          operator="x"
+          operator="*"
           expression={expression}
           setExpression={setExpression}
           setCurrentNumber={setCurrentNumber}
@@ -121,7 +123,12 @@ export default function Home({}: Props) {
           setExpression={setExpression}
           setCurrentNumber={setCurrentNumber}
         />
-        <NegateButton />
+        <NegateButton
+          expression={expression}
+          setExpression={setExpression}
+          currentNumber={currentNumber}
+          setCurrentNumber={setCurrentNumber}
+        />
         <NumberButton
           value="0"
           expression={expression}
@@ -129,8 +136,17 @@ export default function Home({}: Props) {
           currentNumber={currentNumber}
           setCurrentNumber={setCurrentNumber}
         />
-        <CommaButton />
-        <EvaluateButton />
+        <CommaButton
+          expression={expression}
+          setExpression={setExpression}
+          currentNumber={currentNumber}
+          setCurrentNumber={setCurrentNumber}
+        />
+        <EvaluateButton
+          expression={expression}
+          setExpression={setExpression}
+          setCurrentNumber={setCurrentNumber}
+        />
       </div>
     </div>
   );

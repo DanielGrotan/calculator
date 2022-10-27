@@ -25,7 +25,7 @@ export default function OperatorButton({
 
     if (
       lastChar === "/" ||
-      lastChar === "x" ||
+      lastChar === "*" ||
       lastChar === "-" ||
       lastChar === "+"
     ) {
